@@ -1,0 +1,106 @@
+* {
+    padding:0;
+    margin:0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+    background-image:url(stars.png);
+    background-size:cover;
+}
+
+#blue { /* Texte en bleu */
+  color: blue;
+  position: relative;
+  animation: blue 3s linear;
+  display: flex;
+  justify-content: center;
+  top: 300px;
+  font-size: 50px;
+  opacity: 0;
+} 
+
+#img{ /* le logo becode */
+  opacity: 0;
+  animation: scale 3s linear;
+  animation-delay: 3s;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  z-index:3;
+}
+
+section { /* section principale */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 400%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 500px;
+  text-align: justify;
+  z-index:1;
+       
+  }
+  
+
+#crawl { /* Section qui déroule*/
+  position: relative;
+  top: 99999px;
+  transform-origin: 50% 100%;
+  animation: crawl 30s infinite linear;
+  animation-delay: 3s;
+    
+}
+ 
+#title { /* Le titre */
+    font-size: 90%;
+    text-align: center;
+}
+
+
+/* ------------------------KEYFRAMES ------------- */
+
+@keyframes blue { /* Animation du texte bleu*/
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+@keyframes scale{ /* Animation du logo becode */
+  0%{
+    opacity: 1;
+    transform: scale(4);
+  }
+  60%{
+    opacity:1;
+    transform: scale(1);
+  }
+  90%{
+    opacity:1;
+  }
+  100%{
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes crawl {
+      
+  2% {
+  top: 200px;
+  transform: rotateX(30deg)  translateZ(0);
+}
+  100% { 
+  top: -6000px;
+  transform: rotateX(25deg) translateZ(-2500px);
+}
+}
